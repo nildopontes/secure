@@ -1,0 +1,81 @@
+body{
+   background:#FFF;
+   padding:0;
+   width:100vw;
+   margin:0;
+   color:#757575;
+   font-family:Helvetica;
+}
+.on{
+   background:#096;
+}
+.off{
+   background:#9CC;
+}
+input{
+   width:92vw;
+   height:30px;
+   margin-left:3vw;
+}
+h2, h1{
+   text-align:center;
+}
+h1{
+   font-size:100px;
+}
+#container{
+   width:100vw;
+   margin:0;
+   padding:0;
+}
+.code{
+   font-family:'Courier New';
+}
+.bt{
+   width:50vw;
+   height:40px;
+   margin-left:25vw;
+   margin-top:15px;
+   margin-bottom:30px;
+   color:#FFF;
+   border:1px solid #090;
+   font-weight:bold;
+}
+.bti{
+   width:40vw;
+   height:40px;
+   margin-left:6vw;
+   margin-top:15px;
+   color:#FFF;
+   border:1px solid #090;
+   font-weight:bold;
+   display:inline-block;
+}
+textarea{
+   width:96%;
+   margin-left:1.5%;
+   height:63vh;
+   white-space:nowrap;
+   overflow:scroll;
+   overflow-y:auto;
+   overflow-x:scroll;
+}
+td{
+   margin:0;
+   padding:0;
+   background:#8FBC8F;
+   text-align:center;
+  
+}
+table{
+   background:white;
+   color:white;
+   width:100%;
+}
+tr:first-of-type > td{
+   background:#2E8B57;  
+}
+p{
+   text-align:center;
+}
+
