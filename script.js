@@ -52,7 +52,7 @@ function $(id){
    return document.getElementById(id);
 }
 function login(){
-   localStorage.setItem('pass', $('pass').value);
+   sessionStorage.setItem('pass', $('pass').value);
    window.location.reload(false);
 }
 // tagname, id, innerHTML, classes
@@ -85,10 +85,10 @@ function getFunctions(){
       xhr.send();
    });
 }
-function getLocalStorage(){
-   var regs = localStorage.getItem('regs');
+function getSessionStorage(){
+   var regs = sessionStorage.getItem('regs');
    if(regs === null){
-      alert('LocalStorage vazio.');
+      alert('SessionStorage vazio.');
    }else{
       $('data').value += regs;
    }
@@ -96,9 +96,9 @@ function getLocalStorage(){
 function showData(){
    var h2 = logo();
    var text = tag('textarea', 'data', null, 'code');
-   var bt1 = tag('button', null, 'LocalStorage', 'bti on');
+   var bt1 = tag('button', null, 'SessionStorage', 'bti on');
    var bt2 = tag('button', null, 'Salvar', 'bti on');
-   bt1.setAttribute('onclick', 'getLocalStorage()');
+   bt1.setAttribute('onclick', 'getSessionStorage()');
    bt2.onclick  = function(){
       newToken().then(token => {
          modifyData(new TextEncoder().encode($('data').value), token).then(output => {
@@ -145,10 +145,10 @@ function toCurrencyBRL(value){
       }).format(value);
 }
 window.addEventListener('DOMContentLoaded', (event) => {
-   if(!localStorage.getItem('pass')){
+   if(!sessionStorage.getItem('pass')){
       showLogin();
    }else{
-      localStorage.getItem('pass').split('').forEach(element => {
+      sessionStorage.getItem('pass').split('').forEach(element => {
          password.push(element.charCodeAt(0));
       });
       window.crypto.subtle.importKey('raw', new Uint8Array(password), 'AES-GCM', true, ['encrypt', 'decrypt']).then(pass => {
@@ -175,7 +175,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
          }).catch(() => {
             alert('Senha incorreta.');
             password = [];
-            localStorage.removeItem('pass');
+            sessionStorage.removeItem('pass');
             window.location.reload(false);
          });
       });
