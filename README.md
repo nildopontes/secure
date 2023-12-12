@@ -1,2 +1,2 @@
 # secure
-Criptografa dados usando AES-GCM usando a Web Crypto API
+Criptografa dados com o algorítimo AES-GCM usando a Web Crypto API.
