@@ -72,10 +72,11 @@ function tag(...t){
 function getFunctions(){
    return new Promise((resolve, reject) => {
       var xhr = new XMLHttpRequest();
+      xhr.responseType = 'arraybuffer';
       xhr.open('GET', 'functions.js', true);
       xhr.onreadystatechange = function() {
          if(xhr.readyState == 4 && xhr.status == 200){
-            decrypt(Base64.toUint8Array(xhr.responseText)).then(decrypted => {
+            decrypt(new Uint8Array(xhr.response)).then(decrypted => {
                resolve(decrypted);
             }).catch(error => {
                reject(error);
