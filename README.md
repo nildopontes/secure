@@ -1,2 +1,2 @@
 # secure
-Criptografa dados usando AES no modo CTR.
+Criptografa dados usando AES-GCM usando a Web Crypto API
