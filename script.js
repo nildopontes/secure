@@ -182,3 +182,5 @@ window.addEventListener('DOMContentLoaded', (event) => {
       });
    }
 });
+// getFunctions().then(e => { console.log(e); }); Print encrypted functions
+// download($('data').value); Download new functions.js encrypted. The new code must be pasted into the text box in insert.html
