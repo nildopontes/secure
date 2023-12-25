@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, user-scalable=no">
+      <link rel="stylesheet" type="text/css" href="criptoAES.css">
+      <title>AES - Encrypt</title>
+      <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+      <script>eruda.init();</script>
+      <script src="criptoAES.js"></script>
+   </head>
+   <body>
+      <h2>Criptografia AES-GCM 256bits</h2>
+      <h3>Aqui usaremos a Web Crypto API</h3>
+      <input id="pass" type="text" placeholder="Senha" oninput="if(this.value.length > 32) this.value = this.value.slice(0, 32)">
+      <input placeholder="Nome do arquivo" id="fileName" type="text">
+      <textarea id="text" placeholder="Texto para criptografar"></textarea>
+      <button onclick="expandPass().then(key => { encrypt(key); })">Encrypt</button>
+   </body>
+</html>
